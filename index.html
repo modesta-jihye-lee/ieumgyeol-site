@@ -1,0 +1,440 @@
+<title>이음결</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #F1EFE6;
+    --surface: #FAF8EF;
+    --text: #1E2420;
+    --text-muted: #5B6158;
+    --accent: #2F6E5C;
+    --accent-soft: #E4ECE7;
+    --accent-2: #B6873F;
+    --accent-2-soft: #F3E9D6;
+    --line: #DAD5C6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161A13;
+      --surface: #1D2318;
+      --text: #EDE9DD;
+      --text-muted: #ABA99A;
+      --accent: #6FB59E;
+      --accent-soft: #23332C;
+      --accent-2: #D9A855;
+      --accent-2-soft: #332B1A;
+      --line: #2E362A;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #161A13;
+    --surface: #1D2318;
+    --text: #EDE9DD;
+    --text-muted: #ABA99A;
+    --accent: #6FB59E;
+    --accent-soft: #23332C;
+    --accent-2: #D9A855;
+    --accent-2-soft: #332B1A;
+    --line: #2E362A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Gowun Dodum", "Apple SD Gothic Neo", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  h1, h2, h3 {
+    font-family: "Gowun Batang", "Noto Serif KR", serif;
+    font-weight: 700;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding-inline: clamp(20px, 5vw, 40px);
+  }
+
+  a { color: inherit; }
+
+  /* ---- header ---- */
+  header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 18px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .brand-kr {
+    font-family: "Gowun Batang", serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .brand-en {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(14px, 3vw, 28px);
+    margin: 0;
+    padding: 0;
+    font-size: 0.82rem;
+  }
+
+  nav a { text-decoration: none; color: var(--text-muted); }
+  nav a:hover { color: var(--accent); }
+  nav a:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---- stitch divider ---- */
+  .stitch {
+    height: 1px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--accent) 0 10px,
+      transparent 10px 20px
+    );
+    opacity: 0.55;
+    margin-block: 0;
+  }
+
+  /* ---- hero ---- */
+  .hero {
+    padding-block: clamp(56px, 10vw, 96px) clamp(40px, 8vw, 64px);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    line-height: 1.35;
+    max-width: 14ch;
+  }
+
+  .hero p {
+    max-width: 56ch;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin-top: 20px;
+  }
+
+  section { padding-block: clamp(44px, 8vw, 72px); }
+  section + section { border-top: 1px solid var(--line); }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .section-head .label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding-top: 6px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  @media (max-width: 640px) {
+    .section-head { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ---- philosophy ---- */
+  .philosophy-body {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+  }
+  .philosophy-body p {
+    margin: 0 0 1em;
+    max-width: 58ch;
+  }
+  .philosophy-body p:last-child { margin-bottom: 0; }
+  @media (max-width: 640px) {
+    .philosophy-body { grid-template-columns: 1fr; }
+  }
+
+  /* ---- products ---- */
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 640px) {
+    .products { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a.card:hover { cursor: pointer; }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    width: fit-content;
+  }
+
+  .status .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .status.pending .dot {
+    background: transparent;
+    border: 1.5px solid var(--accent-2);
+  }
+  .status.pending { color: var(--accent-2); }
+
+  .card h3 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .card h3 .en {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .card p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.94rem;
+  }
+
+  .tag {
+    align-self: flex-start;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-top: auto;
+  }
+  .card.pending .tag {
+    background: var(--accent-2-soft);
+    color: var(--accent-2);
+  }
+
+  /* ---- founder ---- */
+  .founder-quote {
+    border-left: 2px solid var(--accent);
+    padding-left: 24px;
+    max-width: 62ch;
+  }
+  .founder-quote p {
+    margin: 0 0 1em;
+    font-size: 1.02rem;
+  }
+  .founder-quote p:last-child { margin-bottom: 0; }
+  .founder-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .founder-tags span {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  /* ---- contact / footer ---- */
+  footer {
+    padding-block: clamp(36px, 6vw, 56px);
+    border-top: 1px solid var(--line);
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .contact-email {
+    font-family: "Gowun Batang", serif;
+    font-size: 1.3rem;
+  }
+  .contact-email a { text-decoration: none; border-bottom: 1px solid var(--accent); }
+  .fineprint {
+    margin-top: 28px;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card { transition: transform 0.18s ease, border-color 0.18s ease; }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+  }
+</style>
+
+<header>
+  <div class="wrap nav-row">
+    <div class="brand">
+      <span class="brand-kr">이음결</span>
+      <span class="brand-en mono">IEUMGYEOL</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#philosophy">철학</a></li>
+        <li><a href="#products">서비스</a></li>
+        <li><a href="#founder">소개</a></li>
+        <li><a href="#contact">연락</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>필요해서 만들고,<br>불편해서 고칩니다.</h1>
+    <p>이음결은 AI 엔지니어가 직접 사용자가 되어 문제를 검증하고, 실사용을 전제로 서비스를 설계합니다.</p>
+  </section>
+
+  <div class="stitch" role="presentation"></div>
+
+  <section id="philosophy">
+    <div class="section-head">
+      <span class="label mono">PHILOSOPHY</span>
+      <h2>잘 팔리는 것보다,<br class="mobile-break"> 계속 쓰고 싶은 것</h2>
+    </div>
+    <div class="philosophy-body">
+      <div></div>
+      <div>
+        <p>이음결의 모든 서비스는 실제 사용자의 반복적인 불편함에서 출발합니다. AI 석사 과정과 AI 엔지니어로서의 실무 경험을 기반으로, 삶에 실질적으로 필요한 도구를 설계하고 만듭니다.</p>
+        <p>이음결이라는 이름은 잇다(이음)와 결(무늬·질감)을 붙인 말입니다. 서로 다른 불편함과 해결책을 하나의 결로 이어 붙인다는 뜻을 담았습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-head">
+      <span class="label mono">PRODUCTS</span>
+      <h2>지금 만들고 있는 것들</h2>
+    </div>
+    <div class="products">
+      <a class="card" href="https://apps.apple.com/kr/app/%EB%AA%A8%EB%88%88-%EC%98%A4%EB%8A%98-%ED%95%98%EB%A3%A8-%ED%95%9C-%EC%B9%B8/id6799682689" target="_blank" rel="noopener">
+        <span class="status"><span class="dot"></span>서비스 중</span>
+        <h3>모눈 <span class="en">Todo List</span></h3>
+        <p>머릿속 할 일을 모눈종이 위에 칸칸이 정리하듯, 단순하고 정확하게 쓰는 할 일 관리 앱입니다.</p>
+        <span class="tag mono">TODO-LIST · App Store →</span>
+      </a>
+      <div class="card pending">
+        <span class="status pending"><span class="dot"></span>출시 예정</span>
+        <h3>연리 <span class="en">Yeonri</span></h3>
+        <p>두 나무가 한 몸처럼 자란다는 연리지(連理枝)에서 이름을 따온 결혼 준비 앱입니다. 흩어진 정보와 체크리스트를 하나로 잇습니다.</p>
+        <span class="tag mono">WEDDING PREP</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="section-head">
+      <span class="label mono">FOUNDER</span>
+      <h2>제가 먼저 써보고 싶어서</h2>
+    </div>
+    <div class="founder-quote">
+      <p>백엔드 개발자로 커리어를 시작해 프론트엔드까지 두루 다뤘고, 이후 AI 석사를 거쳐 현재는 AI 엔지니어로 재직 중입니다. 사용자로서 직접 경험한 문제를 정의의 출발점으로 삼아 서비스를 설계합니다.</p>
+      <p>이음결에서 만드는 모든 서비스는 실사용을 전제로 설계되며, 앞으로도 이 원칙을 유지합니다.</p>
+      <div class="founder-tags">
+        <span>백엔드 개발자</span>
+        <span>AI 석사</span>
+        <span>AI 엔지니어</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-row">
+      <div>
+        <span class="eyebrow mono">CONTACT</span>
+        <div class="contact-email"><a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a></div>
+      </div>
+      <span class="mono" style="font-size:0.72rem; color: var(--text-muted);">&copy; 2026 IEUMGYEOL</span>
+    </div>
+    <div class="fineprint mono">
+      <span>이음결</span>
+      <span>·</span>
+      <span>Seoul, Korea</span>
+    </div>
+  </div>
+</footer>
