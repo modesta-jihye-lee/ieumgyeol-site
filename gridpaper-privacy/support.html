@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-title-ko="모눈 고객 지원" data-title-en="Gridpaper Support">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>모눈 고객 지원 · Gridpaper Support</title>
+<script src="/lang.js"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -41,12 +42,16 @@
   .lang-switch { font-size: 0.9rem; color: var(--ink-secondary); margin-bottom: 2.5em; }
   ul { padding-left: 1.2em; }
   li { margin: 0.4em 0; }
+  .lang-switch a { text-decoration: none; padding: 2px 8px; border-radius: 99px; }
+  .lang-switch a[aria-current="true"] { color: var(--ink); background: var(--rule); }
+  html[data-lang] hr.divider { display: none; }
 </style>
 </head>
 <body>
 
-<p class="lang-switch"><a href="#en">English ↓</a></p>
+<p class="lang-switch"><a href="#ko" data-set-lang="ko">한국어</a> · <a href="#en" data-set-lang="en">English</a></p>
 
+<div id="ko" lang="ko">
 <h1>모눈 — 고객 지원</h1>
 <p class="muted">할 일·일정·1년 목표·일기를 한 달력에서 보는 iOS 앱</p>
 
@@ -72,9 +77,12 @@
 <h3>일정 알림이 안 와요</h3>
 <p>기기의 <em>설정 → 알림 → 모눈</em> 에서 알림 허용이 켜져 있는지 확인해 주세요. 알림은 기기 안에서만 예약되는 로컬 알림이라, 알림 권한이 꺼져 있으면 뜨지 않습니다.</p>
 
+</div>
+
 <hr class="divider">
 
-<h1 id="en">Gridpaper — Support</h1>
+<div id="en" lang="en">
+<h1>Gridpaper — Support</h1>
 <p class="muted">An iOS app that puts to-dos, events, yearly goals, and a diary on one calendar</p>
 
 <p class="lede">For questions, bug reports, or feature requests, write to <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a>. You'll usually hear back within a few days. For bugs, please include <strong>your iOS version and the steps that led to it</strong> — that makes it far quicker to track down.</p>
@@ -99,5 +107,6 @@
 <h3>I'm not getting event reminders</h3>
 <p>Check that notifications are allowed under <em>Settings → Notifications → Gridpaper</em>. Reminders are local notifications scheduled on your device, so they won't appear if the permission is off.</p>
 
+</div>
 </body>
 </html>

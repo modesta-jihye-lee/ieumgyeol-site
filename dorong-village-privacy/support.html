@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-title-ko="도롱마을 고객 지원" data-title-en="Dorong Village Support">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>도롱마을 고객 지원 · Dorong Village Support</title>
+<script src="/lang.js"></script>
 <style>
 :root{--bg:#f7f5ef;--ink:#454b3d;--muted:#73776c;--line:#e2dfd3;--chip:#e9ecdf}
 @media (prefers-color-scheme:dark){:root{--bg:#1f211c;--ink:#e6e4da;--muted:#a7a99d;--line:#3a3c34;--chip:#2e3129}}
@@ -16,9 +17,11 @@ h2{font-size:18px;margin:32px 0 6px}
 .lede{color:var(--ink)}
 section+section{margin-top:72px;padding-top:48px;border-top:1px solid var(--line)}
 footer{margin-top:48px;color:var(--muted);font-size:14px}
+nav a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+html[data-lang] section+section{margin-top:0;padding-top:0;border-top:0}
 </style>
 <main>
-<nav><a href="#ko">한국어</a><a href="#en">English</a><a href="./">개인정보 처리방침 · Privacy</a></nav>
+<nav><a href="#ko" data-set-lang="ko">한국어</a><a href="#en" data-set-lang="en">English</a><a href="./"><span lang="ko">개인정보 처리방침</span><span lang="en">Privacy Policy</span></a></nav>
 
 <section id="ko" lang="ko">
 <h1>도롱마을 고객 지원</h1>

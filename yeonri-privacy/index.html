@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-title-ko="연리 개인정보 처리방침" data-title-en="Yeonri Privacy Policy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>연리 개인정보 처리방침 · Yeonri Privacy Policy</title>
+<script src="/lang.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
@@ -167,6 +168,9 @@
   footer.contact p { margin: 0 0 4px; font-size: 0.9rem; color: var(--text-secondary); }
   footer.contact a { color: var(--accent); }
 
+  nav.lang a[aria-current="true"] { background: var(--accent-soft); color: var(--accent); }
+  html[data-lang] hr.divider { display: none; }
+
   ::selection { background: var(--accent-soft); }
 </style>
 </head>
@@ -183,11 +187,11 @@
   </header>
 
   <nav class="lang" aria-label="언어 선택">
-    <a href="#ko">한국어</a>
-    <a href="#en">English</a>
+    <a href="#ko" data-set-lang="ko">한국어</a>
+    <a href="#en" data-set-lang="en">English</a>
   </nav>
 
-  <article id="ko">
+  <article id="ko" lang="ko">
     <h1>연리 개인정보 처리방침</h1>
     <p class="meta">최종 업데이트: 2026년 10월 21일</p>
     <p class="meta business">사업자명: 이음결 (IEUMGYEOL)</p>
@@ -236,7 +240,7 @@
 
   <hr class="divider">
 
-  <article id="en">
+  <article id="en" lang="en">
     <h1>Yeonri Privacy Policy</h1>
     <p class="meta">Last updated: October 21, 2026</p>
     <p class="meta business">Business name: IEUMGYEOL (이음결)</p>

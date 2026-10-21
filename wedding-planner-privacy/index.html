@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-title-ko="웨딩플래너 개인정보 처리방침" data-title-en="WeddingPlanner Privacy Policy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웨딩플래너 개인정보 처리방침 · Privacy Policy</title>
+<script src="/lang.js"></script>
 <style>
   :root { color-scheme: light dark; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -13,10 +14,17 @@
   .muted { color: #888; font-size: 0.9rem; }
   hr { border: none; border-top: 1px solid #8884; margin: 3em 0; }
   code { background: #8882; padding: 1px 5px; border-radius: 4px; }
+  .lang-switch { font-size: 0.9rem; }
+  .lang-switch a { color: inherit; }
+  .lang-switch a[aria-current="true"] { font-weight: 600; text-decoration: none; }
+  html[data-lang] hr { display: none; }
 </style>
 </head>
 <body>
 
+<p class="lang-switch"><a href="#ko" data-set-lang="ko">한국어</a> · <a href="#en" data-set-lang="en">English</a></p>
+
+<div id="ko" lang="ko">
 <h1>웨딩플래너 개인정보 처리방침</h1>
 <p class="muted">최종 업데이트: 2026년 10월 21일</p>
 
@@ -43,8 +51,11 @@
 <h2>7. 문의</h2>
 <p>개인정보 보호 책임자: 이음결 (IEUMGYEOL)<br>개인정보 관련 문의: <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a></p>
 
+</div>
+
 <hr>
 
+<div id="en" lang="en">
 <h1>WeddingPlanner Privacy Policy</h1>
 <p class="muted">Last updated: October 21, 2026</p>
 
@@ -71,5 +82,6 @@
 <h2>7. Contact</h2>
 <p>Privacy contact: IEUMGYEOL (이음결)<br>For privacy inquiries: <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a></p>
 
+</div>
 </body>
 </html>

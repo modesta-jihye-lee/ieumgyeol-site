@@ -1,4 +1,10 @@
+<!doctype html>
+<html lang="ko" data-title-ko="이음결" data-title-en="IEUMGYEOL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이음결</title>
+<script src="/lang.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -115,9 +121,18 @@
     text-transform: uppercase;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(14px, 3vw, 28px);
+    flex-wrap: wrap;
+  }
+
   nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 4px;
     gap: clamp(14px, 3vw, 28px);
     margin: 0;
     padding: 0;
@@ -378,7 +393,29 @@
     .card { transition: transform 0.18s ease, border-color 0.18s ease; }
     .card:hover { transform: translateY(-2px); border-color: var(--accent); }
   }
+
+  /* ---- language switch ---- */
+  .lang-switch {
+    display: flex;
+    gap: 2px;
+    font-size: 0.7rem;
+  }
+  .lang-switch a {
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .lang-switch a:hover { color: var(--accent); }
+  .lang-switch a[aria-current="true"] {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  html[data-lang="en"] .hero h1 { max-width: 20ch; }
 </style>
+</head>
+<body>
 
 <header>
   <div class="wrap nav-row">
@@ -386,22 +423,30 @@
       <span class="brand-kr">이음결</span>
       <span class="brand-en mono">IEUMGYEOL</span>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#philosophy">철학</a></li>
-        <li><a href="#products">서비스</a></li>
-        <li><a href="#founder">소개</a></li>
-        <li><a href="#policies">정책</a></li>
-        <li><a href="#contact">연락</a></li>
-      </ul>
-    </nav>
+    <div class="nav-right">
+      <nav>
+        <ul>
+          <li><a href="#philosophy"><span lang="ko">철학</span><span lang="en">Philosophy</span></a></li>
+          <li><a href="#products"><span lang="ko">서비스</span><span lang="en">Products</span></a></li>
+          <li><a href="#founder"><span lang="ko">소개</span><span lang="en">About</span></a></li>
+          <li><a href="#policies"><span lang="ko">정책</span><span lang="en">Policies</span></a></li>
+          <li><a href="#contact"><span lang="ko">연락</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch mono" role="group" aria-label="언어 선택 · Language">
+        <a href="?lang=ko" data-set-lang="ko">한국어</a>
+        <a href="?lang=en" data-set-lang="en">EN</a>
+      </div>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="hero">
-    <h1>필요해서 만들고,<br>불편해서 고칩니다.</h1>
-    <p>이음결은 AI 엔지니어가 직접 사용자가 되어 문제를 검증하고, 실사용을 전제로 서비스를 설계합니다.</p>
+    <h1 lang="ko">필요해서 만들고,<br>불편해서 고칩니다.</h1>
+    <h1 lang="en">We build what we need,<br>and fix what gets in the way.</h1>
+    <p lang="ko">이음결은 AI 엔지니어가 직접 사용자가 되어 문제를 검증하고, 실사용을 전제로 서비스를 설계합니다.</p>
+    <p lang="en">At IEUMGYEOL, an AI engineer becomes the first user — testing each problem firsthand and designing every service for real, everyday use.</p>
   </section>
 
   <div class="stitch" role="presentation"></div>
@@ -409,13 +454,18 @@
   <section id="philosophy">
     <div class="section-head">
       <span class="label mono">PHILOSOPHY</span>
-      <h2>잘 팔리는 것보다,<br class="mobile-break"> 계속 쓰고 싶은 것</h2>
+      <h2 lang="ko">잘 팔리는 것보다,<br class="mobile-break"> 계속 쓰고 싶은 것</h2>
+      <h2 lang="en">Not what sells best,<br class="mobile-break"> but what you keep coming back to</h2>
     </div>
     <div class="philosophy-body">
       <div></div>
-      <div>
+      <div lang="ko">
         <p>이음결의 모든 서비스는 실제 사용자의 반복적인 불편함에서 출발합니다. AI 석사 과정과 AI 엔지니어로서의 실무 경험을 기반으로, 삶에 실질적으로 필요한 도구를 설계하고 만듭니다.</p>
         <p>이음결이라는 이름은 잇다(이음)와 결(무늬·질감)을 붙인 말입니다. 서로 다른 불편함과 해결책을 하나의 결로 이어 붙인다는 뜻을 담았습니다.</p>
+      </div>
+      <div lang="en">
+        <p>Every IEUMGYEOL service starts from a real frustration that keeps coming back. Drawing on a master's degree in AI and hands-on work as an AI engineer, we design and build tools that make a practical difference in daily life.</p>
+        <p>The name joins two Korean words: <em>ieum</em> (a joining, from 잇다 "to connect") and <em>gyeol</em> (grain, texture). It stands for stitching different frustrations and their solutions into a single, continuous grain.</p>
       </div>
     </div>
   </section>
@@ -423,25 +473,29 @@
   <section id="products">
     <div class="section-head">
       <span class="label mono">PRODUCTS</span>
-      <h2>지금 만들고 있는 것들</h2>
+      <h2 lang="ko">지금 만들고 있는 것들</h2>
+      <h2 lang="en">What we're building now</h2>
     </div>
     <div class="products">
-      <a class="card" href="https://apps.apple.com/kr/app/%EB%AA%A8%EB%88%88-%EC%98%A4%EB%8A%98-%ED%95%98%EB%A3%A8-%ED%95%9C-%EC%B9%B8/id6799682689" target="_blank" rel="noopener">
-        <span class="status"><span class="dot"></span>서비스 중</span>
-        <h3>모눈 <span class="en">Todo List</span></h3>
-        <p>머릿속 할 일을 모눈종이 위에 칸칸이 정리하듯, 단순하고 정확하게 쓰는 할 일 관리 앱입니다.</p>
+      <a class="card" href="https://apps.apple.com/kr/app/%EB%AA%A8%EB%88%88-%EC%98%A4%EB%8A%98-%ED%95%98%EB%A3%A8-%ED%95%9C-%EC%B9%B8/id6799682689" data-href-ko="https://apps.apple.com/kr/app/%EB%AA%A8%EB%88%88-%EC%98%A4%EB%8A%98-%ED%95%98%EB%A3%A8-%ED%95%9C-%EC%B9%B8/id6799682689" data-href-en="https://apps.apple.com/app/id6799682689" target="_blank" rel="noopener">
+        <span class="status"><span class="dot"></span><span lang="ko">서비스 중</span><span lang="en">Available</span></span>
+        <h3><span lang="ko">모눈</span><span lang="en">Gridpaper</span> <span class="en">Todo List</span></h3>
+        <p lang="ko">머릿속 할 일을 모눈종이 위에 칸칸이 정리하듯, 단순하고 정확하게 쓰는 할 일 관리 앱입니다.</p>
+        <p lang="en">A to-do app that keeps things simple and exact — like sorting everything in your head into the squares of a sheet of grid paper.</p>
         <span class="tag mono">TODO-LIST · App Store →</span>
       </a>
       <div class="card pending">
-        <span class="status pending"><span class="dot"></span>출시 예정</span>
-        <h3>연리 <span class="en">Yeonri</span></h3>
-        <p>두 나무가 한 몸처럼 자란다는 연리지(連理枝)에서 이름을 따온 결혼 준비 앱입니다. 흩어진 정보와 체크리스트를 하나로 잇습니다.</p>
+        <span class="status pending"><span class="dot"></span><span lang="ko">출시 예정</span><span lang="en">Coming soon</span></span>
+        <h3><span lang="ko">연리 <span class="en">Yeonri</span></span><span lang="en">Yeonri <span class="en">연리</span></span></h3>
+        <p lang="ko">두 나무가 한 몸처럼 자란다는 연리지(連理枝)에서 이름을 따온 결혼 준비 앱입니다. 흩어진 정보와 체크리스트를 하나로 잇습니다.</p>
+        <p lang="en">A wedding-planning app named after <em>yeonriji</em> (連理枝) — two trees that grow together as one. It ties scattered information and checklists into a single place.</p>
         <span class="tag mono">WEDDING PREP</span>
       </div>
       <div class="card pending">
-        <span class="status pending"><span class="dot"></span>출시 예정</span>
-        <h3>도롱마을 <span class="en">Dorong Village</span></h3>
-        <p>동물 친구들이 기다리는 작은 마을에서 손끝으로 싱잉볼을 울리며 잠깐 쉬어가는 앱입니다. 볼을 톡 치고 가장자리를 돌리거나, 1분부터 10분까지 가만히 듣습니다.</p>
+        <span class="status pending"><span class="dot"></span><span lang="ko">출시 예정</span><span lang="en">Coming soon</span></span>
+        <h3><span lang="ko">도롱마을 <span class="en">Dorong Village</span></span><span lang="en">Dorong Village <span class="en">도롱마을</span></span></h3>
+        <p lang="ko">동물 친구들이 기다리는 작은 마을에서 손끝으로 싱잉볼을 울리며 잠깐 쉬어가는 앱입니다. 볼을 톡 치고 가장자리를 돌리거나, 1분부터 10분까지 가만히 듣습니다.</p>
+        <p lang="en">A small village where animal friends are waiting, and a moment of rest at your fingertips: ring a singing bowl with a tap, circle its rim, or simply listen for anywhere from 1 to 10 minutes.</p>
         <span class="tag mono">SINGING BOWL · REST</span>
       </div>
     </div>
@@ -450,15 +504,22 @@
   <section id="founder">
     <div class="section-head">
       <span class="label mono">FOUNDER</span>
-      <h2>제가 먼저 써보고 싶어서</h2>
+      <h2 lang="ko">제가 먼저 써보고 싶어서</h2>
+      <h2 lang="en">Because I wanted to use it first</h2>
     </div>
     <div class="founder-quote">
-      <p>백엔드 개발자로 커리어를 시작해 프론트엔드까지 두루 다뤘고, 이후 AI 석사를 거쳐 현재는 AI 엔지니어로 재직 중입니다. 사용자로서 직접 경험한 문제를 정의의 출발점으로 삼아 서비스를 설계합니다.</p>
-      <p>이음결에서 만드는 모든 서비스는 실사용을 전제로 설계되며, 앞으로도 이 원칙을 유지합니다.</p>
+      <div lang="ko">
+        <p>백엔드 개발자로 커리어를 시작해 프론트엔드까지 두루 다뤘고, 이후 AI 석사를 거쳐 현재는 AI 엔지니어로 재직 중입니다. 사용자로서 직접 경험한 문제를 정의의 출발점으로 삼아 서비스를 설계합니다.</p>
+        <p>이음결에서 만드는 모든 서비스는 실사용을 전제로 설계되며, 앞으로도 이 원칙을 유지합니다.</p>
+      </div>
+      <div lang="en">
+        <p>I started my career as a backend developer and went on to work across the frontend, then earned a master's in AI. Today I work as an AI engineer. I design services by starting from problems I've run into myself as a user.</p>
+        <p>Everything made at IEUMGYEOL is designed to be used for real, and that principle isn't going to change.</p>
+      </div>
       <div class="founder-tags">
-        <span>백엔드 개발자</span>
-        <span>AI 석사</span>
-        <span>AI 엔지니어</span>
+        <span><span lang="ko">백엔드 개발자</span><span lang="en">Backend developer</span></span>
+        <span><span lang="ko">AI 석사</span><span lang="en">M.S. in AI</span></span>
+        <span><span lang="ko">AI 엔지니어</span><span lang="en">AI engineer</span></span>
       </div>
     </div>
   </section>
@@ -466,27 +527,28 @@
   <section id="policies">
     <div class="section-head">
       <span class="label mono">POLICIES</span>
-      <h2>개인정보 처리방침과 고객 지원</h2>
+      <h2 lang="ko">개인정보 처리방침과 고객 지원</h2>
+      <h2 lang="en">Privacy policies and support</h2>
     </div>
     <ul class="policy-list">
       <li>
-        <span class="app">모눈</span>
+        <span class="app"><span lang="ko">모눈</span><span lang="en">Gridpaper</span></span>
         <span class="policy-links">
-          <a href="gridpaper-privacy/">개인정보 처리방침</a>
-          <a href="gridpaper-privacy/support.html">고객 지원</a>
+          <a href="gridpaper-privacy/"><span lang="ko">개인정보 처리방침</span><span lang="en">Privacy Policy</span></a>
+          <a href="gridpaper-privacy/support.html"><span lang="ko">고객 지원</span><span lang="en">Support</span></a>
         </span>
       </li>
       <li>
-        <span class="app">연리</span>
+        <span class="app"><span lang="ko">연리</span><span lang="en">Yeonri</span></span>
         <span class="policy-links">
-          <a href="yeonri-privacy/">개인정보 처리방침</a>
+          <a href="yeonri-privacy/"><span lang="ko">개인정보 처리방침</span><span lang="en">Privacy Policy</span></a>
         </span>
       </li>
       <li>
-        <span class="app">도롱마을</span>
+        <span class="app"><span lang="ko">도롱마을</span><span lang="en">Dorong Village</span></span>
         <span class="policy-links">
-          <a href="dorong-village-privacy/">개인정보 처리방침</a>
-          <a href="dorong-village-privacy/support.html">고객 지원</a>
+          <a href="dorong-village-privacy/"><span lang="ko">개인정보 처리방침</span><span lang="en">Privacy Policy</span></a>
+          <a href="dorong-village-privacy/support.html"><span lang="ko">고객 지원</span><span lang="en">Support</span></a>
         </span>
       </li>
     </ul>
@@ -503,9 +565,11 @@
       <span class="mono" style="font-size:0.72rem; color: var(--text-muted);">&copy; 2026 IEUMGYEOL</span>
     </div>
     <div class="fineprint mono">
-      <span>이음결</span>
+      <span lang="ko">이음결</span><span lang="en">IEUMGYEOL</span>
       <span>·</span>
       <span>Seoul, Korea</span>
     </div>
   </div>
 </footer>
+</body>
+</html>

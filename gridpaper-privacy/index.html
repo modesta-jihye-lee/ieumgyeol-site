@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-title-ko="모눈 개인정보 처리방침" data-title-en="Gridpaper Privacy Policy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>모눈 개인정보 처리방침 · Gridpaper Privacy Policy</title>
+<script src="/lang.js"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -40,12 +41,16 @@
   .lede { margin: 1.4em 0 0; }
   hr.divider { border: none; border-top: 1px solid var(--rule); margin: 5em 0 3em; }
   .lang-switch { font-size: 0.9rem; color: var(--ink-secondary); margin-bottom: 2.5em; }
+  .lang-switch a { text-decoration: none; padding: 2px 8px; border-radius: 99px; }
+  .lang-switch a[aria-current="true"] { color: var(--ink); background: var(--rule); }
+  html[data-lang] hr.divider { display: none; }
 </style>
 </head>
 <body>
 
-<p class="lang-switch"><a href="#en">English ↓</a></p>
+<p class="lang-switch"><a href="#ko" data-set-lang="ko">한국어</a> · <a href="#en" data-set-lang="en">English</a></p>
 
+<div id="ko" lang="ko">
 <h1>모눈 개인정보 처리방침</h1>
 <p class="muted">최종 업데이트: 2026년 10월 21일</p>
 
@@ -101,9 +106,12 @@
 <h2>11. 문의</h2>
 <p>개인정보 보호 책임자: 이음결 (IEUMGYEOL)<br>개인정보 관련 문의: <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a></p>
 
+</div>
+
 <hr class="divider">
 
-<h1 id="en">Gridpaper Privacy Policy</h1>
+<div id="en" lang="en">
+<h1>Gridpaper Privacy Policy</h1>
 <p class="muted">Last updated: October 21, 2026</p>
 
 <p class="lede"><strong>Gridpaper</strong> ("the App") does <strong>not collect or transmit your content to the developer's servers.</strong> The App has no developer-operated server, and there is no sign-up or login. What you write stays on your device and in your own iCloud account.</p>
@@ -158,5 +166,6 @@
 <h2>11. Contact</h2>
 <p>Privacy contact: IEUMGYEOL (이음결)<br>Privacy inquiries: <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a></p>
 
+</div>
 </body>
 </html>
