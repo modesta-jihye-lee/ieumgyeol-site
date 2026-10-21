@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모눈 고객 지원 · Gridpaper Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #FAF8F5;
+    --ink: #33322E;
+    --ink-secondary: #6B6960;
+    --rule: #33322E22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1B1B19;
+      --ink: #E6E3DC;
+      --ink-secondary: #9A978E;
+      --rule: #E6E3DC22;
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 96px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--paper);
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.55rem; line-height: 1.4; margin-bottom: 0.2em; }
+  h2 { font-size: 1.1rem; margin-top: 2.4em; padding-top: 0.6em; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1rem; margin-top: 1.8em; margin-bottom: 0.3em; }
+  h3 + p { margin-top: 0; }
+  a { color: inherit; text-decoration-color: var(--ink-secondary); text-underline-offset: 3px; }
+  .muted { color: var(--ink-secondary); font-size: 0.9rem; }
+  .lede { margin: 1.4em 0 0; }
+  hr.divider { border: none; border-top: 1px solid var(--rule); margin: 5em 0 3em; }
+  .lang-switch { font-size: 0.9rem; color: var(--ink-secondary); margin-bottom: 2.5em; }
+  ul { padding-left: 1.2em; }
+  li { margin: 0.4em 0; }
+</style>
+</head>
+<body>
+
+<p class="lang-switch"><a href="#en">English ↓</a></p>
+
+<h1>모눈 — 고객 지원</h1>
+<p class="muted">할 일·일정·1년 목표·일기를 한 달력에서 보는 iOS 앱</p>
+
+<p class="lede">문의·버그 제보·기능 제안은 <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a> 로 보내 주세요. 보통 며칠 안에 답장 드립니다. 버그라면 <strong>사용 중인 iOS 버전과 어떤 순서로 눌렀을 때 생겼는지</strong>를 함께 적어 주시면 훨씬 빨리 찾을 수 있습니다.</p>
+
+<h2>자주 묻는 것</h2>
+
+<h3>다른 기기에서 기록이 안 보여요</h3>
+<p>두 기기가 <strong>같은 Apple 계정</strong>으로 로그인되어 있고, <em>설정 → (사용자 이름) → iCloud</em> 에서 모눈의 iCloud 사용이 켜져 있어야 합니다. 켜져 있는데도 안 보이면 두 기기 모두 네트워크에 연결한 뒤 앱을 한 번씩 열어 주세요 — 동기화는 앱이 떠 있을 때 이루어집니다.</p>
+
+<h3>기록이 개발자에게 보이나요</h3>
+<p>아니요. 모눈에는 개발자가 운영하는 서버가 없습니다. 기록은 기기와 이용자 본인의 iCloud 안에만 있습니다. 자세한 내용은 <a href="./">개인정보 처리방침</a>에 있습니다.</p>
+
+<h3>백업은 어떻게 하나요</h3>
+<p>iCloud 동기화가 켜져 있으면 기록이 이용자 본인의 iCloud에 함께 보관되므로, 기기를 바꿔도 같은 Apple 계정으로 로그인하고 앱을 설치하면 그대로 따라옵니다.</p>
+
+<h3>앱을 지우면 기록도 사라지나요</h3>
+<p>기기에서 앱을 지우면 그 기기의 데이터가 지워집니다. iCloud에 남은 데이터는 <em>설정 → (사용자 이름) → iCloud → 저장 공간 관리</em> 에서 지울 수 있습니다.</p>
+
+<h3>앱 언어를 기기와 다르게 쓰고 싶어요</h3>
+<p>앱의 <strong>설정 → 언어</strong> 에서 한국어·English 를 직접 고를 수 있습니다.</p>
+
+<h3>일정 알림이 안 와요</h3>
+<p>기기의 <em>설정 → 알림 → 모눈</em> 에서 알림 허용이 켜져 있는지 확인해 주세요. 알림은 기기 안에서만 예약되는 로컬 알림이라, 알림 권한이 꺼져 있으면 뜨지 않습니다.</p>
+
+<hr class="divider">
+
+<h1 id="en">Gridpaper — Support</h1>
+<p class="muted">An iOS app that puts to-dos, events, yearly goals, and a diary on one calendar</p>
+
+<p class="lede">For questions, bug reports, or feature requests, write to <a href="mailto:hello@ieumgyeol.com">hello@ieumgyeol.com</a>. You'll usually hear back within a few days. For bugs, please include <strong>your iOS version and the steps that led to it</strong> — that makes it far quicker to track down.</p>
+
+<h2>Common questions</h2>
+
+<h3>My records aren't showing up on my other device</h3>
+<p>Both devices need to be signed in to the <strong>same Apple Account</strong>, with iCloud enabled for Gridpaper under <em>Settings → (your name) → iCloud</em>. If that's already the case, connect both devices to a network and open the app once on each — syncing happens while the app is running.</p>
+
+<h3>Can the developer see what I write?</h3>
+<p>No. Gridpaper has no developer-operated server. Your records live on your device and in your own iCloud. See the <a href="./">Privacy Policy</a> for details.</p>
+
+<h3>How do I back up my data?</h3>
+<p>With iCloud sync on, your records are kept in your own iCloud account. When you switch devices, sign in with the same Apple Account and install the app — everything follows.</p>
+
+<h3>If I delete the app, is my data gone?</h3>
+<p>Deleting the app removes that device's data. Anything left in iCloud can be removed under <em>Settings → (your name) → iCloud → Manage Account Storage</em>.</p>
+
+<h3>Can I use the app in a different language than my device?</h3>
+<p>Yes — pick 한국어 or English under <strong>Settings → Language</strong> in the app.</p>
+
+<h3>I'm not getting event reminders</h3>
+<p>Check that notifications are allowed under <em>Settings → Notifications → Gridpaper</em>. Reminders are local notifications scheduled on your device, so they won't appear if the permission is off.</p>
+
+</body>
+</html>

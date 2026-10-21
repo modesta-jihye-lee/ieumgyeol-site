@@ -313,6 +313,41 @@
     border-radius: 999px;
   }
 
+  /* ---- policies ---- */
+  .policy-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .policy-list li {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .policy-list .app {
+    font-family: "Gowun Batang", serif;
+    font-weight: 700;
+  }
+  .policy-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+  .policy-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .policy-links a:hover { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 640px) {
+    .policy-list li { grid-template-columns: 1fr; gap: 4px; }
+  }
+
   /* ---- contact / footer ---- */
   footer {
     padding-block: clamp(36px, 6vw, 56px);
@@ -356,6 +391,7 @@
         <li><a href="#philosophy">철학</a></li>
         <li><a href="#products">서비스</a></li>
         <li><a href="#founder">소개</a></li>
+        <li><a href="#policies">정책</a></li>
         <li><a href="#contact">연락</a></li>
       </ul>
     </nav>
@@ -425,6 +461,41 @@
         <span>AI 엔지니어</span>
       </div>
     </div>
+  </section>
+
+  <section id="policies">
+    <div class="section-head">
+      <span class="label mono">POLICIES</span>
+      <h2>개인정보 처리방침과 고객 지원</h2>
+    </div>
+    <ul class="policy-list">
+      <li>
+        <span class="app">모눈</span>
+        <span class="policy-links">
+          <a href="gridpaper-privacy/">개인정보 처리방침</a>
+          <a href="gridpaper-privacy/support.html">고객 지원</a>
+        </span>
+      </li>
+      <li>
+        <span class="app">연리</span>
+        <span class="policy-links">
+          <a href="yeonri-privacy/">개인정보 처리방침</a>
+        </span>
+      </li>
+      <li>
+        <span class="app">도롱마을</span>
+        <span class="policy-links">
+          <a href="dorong-village-privacy/">개인정보 처리방침</a>
+          <a href="dorong-village-privacy/support.html">고객 지원</a>
+        </span>
+      </li>
+      <li>
+        <span class="app">웨딩플래너</span>
+        <span class="policy-links">
+          <a href="wedding-planner-privacy/">개인정보 처리방침</a>
+        </span>
+      </li>
+    </ul>
   </section>
 </main>
 
